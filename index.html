@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#160b35">
+<title>Your Diwali Wish ✨</title>
+<style>
+:root{color-scheme:dark;--gold:#ffd477;--cream:#fff3d8;--muted:#cbbbdc;--panel:#21123c}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;padding:22px 14px;display:grid;place-items:center;background:radial-gradient(ellipse at 50% 0%,#55235f 0%,transparent 48%),radial-gradient(ellipse at 5% 100%,#7a3027 0%,transparent 36%),#100821;color:var(--cream);font-family:Georgia,"Times New Roman",serif}
+.spark{position:fixed;width:7px;height:7px;border-radius:50%;background:var(--gold);box-shadow:0 0 18px 6px #ffad45aa;animation:twinkle 2s infinite alternate;pointer-events:none}
+.s1{top:13%;left:9%}.s2{top:25%;right:8%;animation-delay:.7s}.s3{bottom:12%;left:17%;animation-delay:1.2s}.s4{bottom:22%;right:13%;animation-delay:.4s}
+@keyframes twinkle{to{opacity:.25;transform:scale(.5)}}
+main{width:min(100%,680px);position:relative}
+.top{text-align:center;margin-bottom:18px}
+.kicker{font:700 11px system-ui,sans-serif;letter-spacing:.28em;text-transform:uppercase;color:var(--gold)}
+h1{font-size:clamp(30px,7vw,48px);font-weight:400;margin:8px 0;color:#ffe1a0}
+.subtitle{font:14px/1.5 system-ui,sans-serif;color:var(--muted);margin:0}
+.shell{border:1px solid #e9bd6977;border-radius:25px;padding:clamp(18px,5vw,34px);background:linear-gradient(145deg,#2b1748ed,#170d2ff2);box-shadow:0 25px 80px #0008,0 0 45px #e9a84b18}
+.progress{display:flex;gap:7px;margin-bottom:25px}
+.progress span{height:4px;flex:1;border-radius:9px;background:#ffffff20}
+.progress span.done{background:linear-gradient(90deg,#e9a83d,#ffe3a0)}
+.step{display:none;animation:enter .35s ease}
+.step.active{display:block}
+@keyframes enter{from{opacity:0;transform:translateY(9px)}to{opacity:1;transform:none}}
+.step-label{font:700 10px system-ui,sans-serif;letter-spacing:.2em;text-transform:uppercase;color:#e7b95f}
+h2{font-size:clamp(24px,5vw,32px);font-weight:400;line-height:1.2;margin:10px 0 8px}
+.hint{font:14px/1.55 system-ui,sans-serif;color:var(--muted);margin:0 0 22px}
+.choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.choice{min-height:88px;text-align:left;padding:16px;border-radius:16px;border:1px solid #e9bd6966;background:#ffffff08;color:var(--cream);cursor:pointer;transition:.2s}
+.choice:hover,.choice:focus-visible{border-color:var(--gold);background:#e9bd6918;transform:translateY(-2px);outline:none}
+.choice strong{display:block;font:600 15px system-ui,sans-serif;margin-bottom:6px}
+.choice small{font:12px/1.4 system-ui,sans-serif;color:var(--muted)}
+.nav{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:24px}
+button.primary,button.ghost{border-radius:999px;padding:12px 20px;font:700 13px system-ui,sans-serif;cursor:pointer}
+.primary{border:0;background:linear-gradient(135deg,#ffe6a2,#e8a83d);color:#24112f;box-shadow:0 6px 20px #0004}
+.ghost{border:1px solid #e9bd6977;background:transparent;color:#ffe5b2}
+button:disabled{opacity:.3;cursor:not-allowed}
+input{width:100%;padding:14px 16px;border-radius:13px;border:1px solid #e9bd6977;background:#ffffff0b;color:white;font:15px system-ui,sans-serif;outline:none}
+input:focus{border-color:var(--gold)}
+.final-art{width:100%;height:auto;border-radius:13px;display:block;border:1px solid #e9bd6966}
+.final-message{text-align:center;font-size:19px;line-height:1.6;color:#ffedce;margin:20px 0 8px}
+.final-sign{text-align:center;color:var(--gold);font:14px system-ui,sans-serif}
+.final-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-top:22px}
+.note{text-align:center;color:#aa99bd;font:11px system-ui,sans-serif;margin:18px 0 0}
+@media(max-width:480px){.choices{grid-template-columns:1fr}.choice{min-height:72px}.shell{border-radius:20px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<span class="spark s1"></span><span class="spark s2"></span><span class="spark s3"></span><span class="spark s4"></span>
+<main>
+  <header class="top"><div class="kicker">A little light, a lot of love</div><h1>Let's make a Diwali wish</h1><p class="subtitle">Choose a few things and we'll create a greeting just for you.</p></header>
+  <section class="shell">
+    <div class="progress" aria-label="Progress"><span class="done"></span><span></span><span></span><span></span></div>
+    <section class="step active" data-step="0">
+      <div class="step-label">Step 1 of 4</div><h2>Who are you sending wishes to?</h2><p class="hint">Choose the people you'd like to brighten up today.</p>
+      <div class="choices">
+        <button class="choice" data-key="audience" data-value="family"><strong>👨‍👩‍👧‍👦 Family</strong><small>For the people closest to your heart</small></button>
+        <button class="choice" data-key="audience" data-value="friends"><strong>🫶 Friends</strong><small>For your favourite people</small></button>
+        <button class="choice" data-key="audience" data-value="everyone"><strong>✨ Everyone</strong><small>A wish to share with all</small></button>
+        <button class="choice" data-key="audience" data-value="someone"><strong>💛 Someone special</strong><small>A personal note for one person</small></button>
+      </div>
+      <div class="nav"><span></span><button class="primary next" disabled>Next →</button></div>
+    </section>
+    <section class="step" data-step="1">
+      <div class="step-label">Step 2 of 4</div><h2>Pick the feeling</h2><p class="hint">What kind of Diwali message should it be?</p>
+      <div class="choices">
+        <button class="choice" data-key="tone" data-value="warm"><strong>❤️ Warm & heartfelt</strong><small>A thoughtful wish from the heart</small></button>
+        <button class="choice" data-key="tone" data-value="traditional"><strong>🪔 Traditional</strong><small>Classic festive blessings</small></button>
+        <button class="choice" data-key="tone" data-value="cheerful"><strong>🎉 Cheerful & bright</strong><small>Positive energy and celebration</small></button>
+        <button class="choice" data-key="tone" data-value="simple"><strong>🌟 Short & sweet</strong><small>Simple words, big wishes</small></button>
+      </div>
+      <div class="nav"><button class="ghost back">← Back</button><button class="primary next" disabled>Next →</button></div>
+    </section>
+    <section class="step" data-step="2">
+      <div class="step-label">Step 3 of 4</div><h2>What should this Diwali bring?</h2><p class="hint">Choose the blessing you want to highlight.</p>
+      <div class="choices">
+        <button class="choice" data-key="blessing" data-value="happiness"><strong>😊 Happiness</strong><small>More smiles and beautiful moments</small></button>
+        <button class="choice" data-key="blessing" data-value="prosperity"><strong>🌼 Prosperity</strong><small>Success and new opportunities</small></button>
+        <button class="choice" data-key="blessing" data-value="health"><strong>🌿 Health & peace</strong><small>Wellbeing, calm and togetherness</small></button>
+        <button class="choice" data-key="blessing" data-value="all"><strong>💫 A little of everything</strong><small>All the good things life can bring</small></button>
+      </div>
+      <div class="nav"><button class="ghost back">← Back</button><button class="primary next" disabled>Next →</button></div>
+    </section>
+    <section class="step" data-step="3">
+      <div class="step-label">Step 4 of 4</div><h2>Add your name</h2><p class="hint">Who is sending this lovely wish? You can leave it blank.</p>
+      <input id="sender" maxlength="40" placeholder="Your name (e.g. Nikhil)" autocomplete="name">
+      <div class="nav"><button class="ghost back">← Back</button><button class="primary" id="makeWish">Create my wish ✨</button></div>
+    </section>
+    <section class="step" data-step="4">
+      <div class="step-label">Your Diwali greeting</div><h2 id="finalTitle">A wish made with love</h2>
+      <img class="final-art" src="diwali-card.png" alt="Diwali card with diyas, rangoli and fireworks">
+      <p class="final-message" id="finalMessage"></p><p class="final-sign" id="finalSign"></p>
+      <div class="final-actions">
+        <button class="primary" id="share">Share this wish ↗</button>
+        <button class="ghost" id="restart">↻ Start over</button>
+      </div>
+    </section>
+  </section>
+  <p class="note">Made with light & good wishes · Shubh Deepawali</p>
+</main>
+<script>
+const answers={};
+let current=0;
+const steps=[...document.querySelectorAll('.step')];
+const bars=[...document.querySelectorAll('.progress span')];
+function show(n){
+ current=n; steps.forEach((s,i)=>s.classList.toggle('active',i===n));
+ bars.forEach((b,i)=>b.classList.toggle('done',i<=Math.min(n,3)));
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+document.querySelectorAll('.choice').forEach(btn=>{
+ btn.addEventListener('click',()=>{
+  const key=btn.dataset.key;
+  answers[key]=btn.dataset.value;
+  btn.parentElement.querySelectorAll('.choice').forEach(b=>b.style.borderColor='');
+  btn.style.borderColor='var(--gold)';
+  const next=btn.closest('.step').querySelector('.next');
+  next.disabled=false;
+  next.dataset.selected='yes';
+ });
+});
+document.querySelectorAll('.next').forEach(btn=>btn.addEventListener('click',()=>{if(!btn.disabled)show(current+1)}));
+document.querySelectorAll('.back').forEach(btn=>btn.addEventListener('click',()=>show(current-1)));
+const messages={
+ warm:{happiness:'May your days be filled with laughter, your home with warmth, and your heart with endless happiness.',prosperity:'May every diya light a new opportunity and every step lead you towards success and prosperity.',health:'May peace live in your heart, good health surround your family, and love brighten every day.',all:'May this Diwali bring happiness, prosperity, good health and countless beautiful moments to you and your loved ones.'},
+ traditional:{happiness:'May the divine light of Diwali fill your home with joy, harmony and happiness.',prosperity:'May Goddess Lakshmi bless your home with abundance, success and prosperity.',health:'May this festival bring peace, good health and blessings to your entire family.',all:'May the light of the diyas bring you sukh, samruddhi, shanti and good health. Shubh Deepawali!'},
+ cheerful:{happiness:'Wishing you bright lights, happy moments, sweet memories and a whole lot of reasons to smile!',prosperity:'Here’s to fresh beginnings, big dreams, exciting opportunities and a wonderfully successful year!',health:'Sending you positive vibes, peaceful days, good health and lots of festive cheer!',all:'May your Diwali sparkle with joy, success, good health, laughter and all things wonderful!'},
+ simple:{happiness:'Wishing you endless happiness and a beautiful Diwali!',prosperity:'Wishing you success, abundance and prosperity. Happy Diwali!',health:'Wishing you peace, good health and happiness. Shubh Deepawali!',all:'Happiness, prosperity, peace and good health to you. Happy Diwali!'}
+};
+document.getElementById('makeWish').addEventListener('click',()=>{
+ const tone=answers.tone||'warm', blessing=answers.blessing||'all';
+ const audience={family:'Dear Family,',friends:'Dear Friends,',everyone:'Warm wishes to you,',someone:'A special wish for you,'}[answers.audience||'everyone'];
+ document.getElementById('finalTitle').textContent=audience;
+ document.getElementById('finalMessage').textContent=messages[tone][blessing];
+ const name=document.getElementById('sender').value.trim();
+ document.getElementById('finalSign').textContent=name?`With love, ${name}`:'With warm wishes';
+ show(4);
+});
+document.getElementById('restart').addEventListener('click',()=>{
+ Object.keys(answers).forEach(k=>delete answers[k]);
+ document.querySelectorAll('.choice').forEach(b=>b.style.borderColor='');
+ document.querySelectorAll('.next').forEach(b=>{b.disabled=true;delete b.dataset.selected});
+ document.getElementById('sender').value='';
+ show(0);
+});
+document.getElementById('share').addEventListener('click',async()=>{
+ const text=`${document.getElementById('finalTitle').textContent}\n${document.getElementById('finalMessage').textContent}\n${document.getElementById('finalSign').textContent}\nShubh Deepawali!`;
+ if(navigator.share){try{await navigator.share({title:'Happy Diwali',text,url:location.href})}catch(e){}}
+ else{try{await navigator.clipboard.writeText(text);alert('Your Diwali wish has been copied!')}catch(e){prompt('Copy your Diwali wish:',text)}}
+});
+</script>
+</body>
+</html>
